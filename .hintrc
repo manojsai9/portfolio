@@ -10,6 +10,18 @@
           "meta[name=theme-color]"
         ]
       }
+    ],
+    "compat-api/css": [
+      "default",
+      {
+        "ignore": [
+          "backdrop-filter",
+          "overscroll-behavior",
+          "scrollbar-width",
+          "overscroll-behavior: contain",
+          "scrollbar-width: none"
+        ]
+      }
     ]
   }
 }

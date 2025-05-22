@@ -15,7 +15,7 @@ const Resume = () => {
     {
       title: "Digitide - Data Engineering Intern",
       period: "April 2025 — Present",
-      description: "Designing and optimizing ETL pipelines for AI/ML workflows under DAAI Team & Learning industry-standard tools (e.g., Apache Airflow, Spark, SQL)"
+      description: "Workflows under DAAI Team & Learning industry-standard tools (e.g.,Data Warehousing, SQL, Apache Airflow, Python)"
     },
     {
       title: "Slash Mark - Full Stack Developer",
