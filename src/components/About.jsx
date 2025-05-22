@@ -48,7 +48,7 @@ const About = ({ openModal }) => {
           A self-taught programmer with a passion for software development.
         </p>
         <p>
-          I'm passionate about building web applications and software that is not only functional but also intuitive and user-friendly. I believe in continuous learning and staying updated with the latest technologies.
+          I used to build user-friendly websites using MERN Stack. Currently, I am focused on developing my skills as a Data Engineer by learning SQL, Python, data warehousing, related tools, and concepts. I believe in continuous learning and staying updated with the latest technologies.
         </p>
       </section>
 
