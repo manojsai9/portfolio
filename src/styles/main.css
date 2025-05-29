@@ -2340,3 +2340,377 @@ article[data-page="contact"] {
   flex: 1;
   margin-top: 15px;
 }
+
+/*-----------------------------------*\
+  #CHATBOT GAMES
+\*-----------------------------------*/
+
+/*-----------------------------------*\
+  #CHATBOT
+\*-----------------------------------*/
+
+.chatbot-toggle {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--orange-yellow-crayola);
+  color: var(--white-2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  box-shadow: var(--shadow-3);
+  z-index: 1000;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-1);
+}
+
+.chatbot-toggle:hover {
+  transform: scale(1.1);
+}
+
+.chatbot-toggle.active {
+  background: var(--bittersweet-shimmer);
+}
+
+.chatbot-container {
+  position: fixed;
+  bottom: 100px;
+  right: 30px;
+  width: 350px;
+  max-height: 500px;
+  background: var(--eerie-black-2);
+  border: 1px solid var(--jet);
+  border-radius: 15px;
+  box-shadow: var(--shadow-5);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: var(--transition-2);
+}
+
+.chatbot-container.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.chatbot-header {
+  padding: 15px;
+  background: var(--border-gradient-onyx);
+  border-radius: 15px 15px 0 0;
+  text-align: center;
+}
+
+.chatbot-header h3 {
+  color: var(--orange-yellow-crayola);
+  font-size: var(--fs-5);
+  margin: 0;
+}
+
+.chatbot-messages {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.message {
+  max-width: 80%;
+  padding: 10px 15px;
+  border-radius: 18px;
+  line-height: 1.4;
+  font-size: var(--fs-7);
+  animation: fadeIn 0.3s ease;
+}
+
+.message.bot {
+  background: var(--border-gradient-onyx);
+  color: var(--white-2);
+  align-self: flex-start;
+  border-radius: 18px 18px 18px 4px;
+}
+
+.message.user {
+  background: var(--orange-yellow-crayola);
+  color: var(--white-2);
+  align-self: flex-end;
+  border-radius: 18px 18px 4px 18px;
+}
+
+.message.typing {
+  background: transparent;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  height: 40px;
+}
+
+.typing-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--orange-yellow-crayola);
+  border-radius: 50%;
+  animation: typingAnimation 1.4s infinite ease-in-out;
+}
+
+.typing-dot:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.typing-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typingAnimation {
+  0%, 60%, 100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-5px);
+  }
+}
+
+.quick-questions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0 15px 15px;
+}
+
+.quick-question {
+  background: var(--bg-gradient-jet);
+  color: var(--light-gray);
+  border: 1px solid var(--jet);
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-size: var(--fs-8);
+  cursor: pointer;
+  transition: var(--transition-1);
+}
+
+.quick-question:hover {
+  background: var(--orange-yellow-crayola);
+  color: var(--white-2);
+}
+
+.chatbot-input {
+  display: flex;
+  padding: 15px;
+  border-top: 1px solid var(--jet);
+}
+
+.chatbot-input input {
+  flex: 1;
+  background: var(--bg-gradient-jet);
+  color: var(--white-2);
+  border: 1px solid var(--jet);
+  border-radius: 20px;
+  padding: 10px 15px;
+  font-size: var(--fs-7);
+  outline: none;
+}
+
+.chatbot-input button {
+  background: var(--orange-yellow-crayola);
+  color: var(--white-2);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: var(--transition-1);
+}
+
+.chatbot-input button:hover {
+  transform: scale(1.1);
+}
+
+/* Light mode styles */
+.light-mode .chatbot-container {
+  background: var(--eerie-black-1);
+  border: 1px solid var(--jet);
+}
+
+.light-mode .message.bot {
+  background: var(--border-gradient-onyx);
+  color: var(--white-1);
+}
+
+.light-mode .message.user {
+  background: var(--orange-yellow-crayola);
+  color: var(--white-1);
+}
+
+.light-mode .quick-question {
+  background: var(--eerie-black-1);
+  color: var(--white-1);
+}
+
+.light-mode .quick-question:hover {
+  background: var(--orange-yellow-crayola);
+  color: var(--white-1);
+}
+
+.light-mode .chatbot-input input {
+  background: var(--eerie-black-1);
+  color: var(--white-1);
+}
+
+/* Tic-Tac-Toe */
+.tic-tac-toe-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  margin: 10px;
+  background: var(--bg-gradient-jet);
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--jet);
+}
+
+.tic-tac-toe-cell {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--eerie-black-1);
+  border: 1px solid var(--jet);
+  border-radius: 5px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: var(--transition-1);
+  color: var(--white-2);
+}
+
+.tic-tac-toe-cell:hover {
+  background: var(--border-gradient-onyx);
+}
+
+.tic-tac-toe-cell.game-ended {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Chess */
+.chess-game-container {
+  margin: 10px 0;
+}
+
+.chess-board {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-gradient-jet);
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--jet);
+}
+
+.chess-row {
+  display: flex;
+}
+
+.chess-square {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.chess-square.light {
+  background: #f0d9b5;
+}
+
+.chess-square.dark {
+  background: #b58863;
+}
+
+.chess-square.selected {
+  background: var(--orange-yellow-crayola);
+}
+
+.chess-square.valid-move::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+}
+
+.chess-piece {
+  font-size: 24px;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chess-piece.white {
+  color: #fff;
+  text-shadow: 0 0 2px #000;
+}
+
+.chess-piece.black {
+  color: #000;
+  text-shadow: 0 0 2px #fff;
+}
+
+/* End Game Button */
+.end-game-btn {
+  background: var(--border-gradient-onyx);
+  color: var(--white-2);
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: var(--transition-1);
+  font-size: var(--fs-7);
+}
+
+.end-game-btn:hover {
+  background: var(--orange-yellow-crayola);
+}
+
+/* Light Mode Adjustments */
+.light-mode .tic-tac-toe-cell {
+  background: var(--eerie-black-2);
+}
+
+.light-mode .chess-square.light {
+  background: #f0d9b5;
+}
+
+.light-mode .chess-square.dark {
+  background: #b58863;
+}
+
+.light-mode .chess-piece.white {
+  color: #fff;
+}
+
+.light-mode .chess-piece.black {
+  color: #000;
+}
