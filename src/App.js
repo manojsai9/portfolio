@@ -7,7 +7,6 @@ import About from './components/About';
 import Resume from './components/Resume';
 import Portfolio from './components/Portfolio';
 import Contact from './components/Contact';
-import Chatbot from './components/Chatbot';
 
 function App() {
   const [activePage, setActivePage] = useState('about');
@@ -80,7 +79,6 @@ function App() {
           </div>
         </div>
       </div>
-      <Chatbot />
     </div>
   );
 }
